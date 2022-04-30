@@ -1,0 +1,17 @@
+#brightness keys
+XF86MonBrightnessUp
+	brillo -A 10
+
+XF86MonBrightnessDown
+	brillo -U 10
+
+#screenshot
+Print
+	scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+
+#volume
+XF86AudioRaiseVolume
+	pamixer -i 5
+
+XF86AudioLowerVolume
+	pamixer -d 5

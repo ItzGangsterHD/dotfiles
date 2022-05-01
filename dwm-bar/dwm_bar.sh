@@ -45,16 +45,18 @@ export SEP2="]"
 #. "$DIR/bar-functions/dwm_vpn.sh"
 #. "$DIR/bar-functions/dwm_weather.sh"
 
-parallelize() {
-    while true
-    do
-        printf "Running parallel processes\n"
-        dwm_networkmanager
-        #dwm_weather &
-        sleep 5
-    done
-}
-parallelize &
+dwm_networkmanager
+
+#parallelize() {
+#    while true
+#    do
+#        printf "Running parallel processes\n"
+#        #dwm_networkmanager &
+#        #dwm_weather &
+#        sleep 5
+#    done
+#}
+#parallelize &
 
 # Update dwm status bar every second
 while true
@@ -90,5 +92,5 @@ do
     xsetroot -name "$upperbar"
     # Uncomment the line below to enable the lowerbar 
     #xsetroot -name "$upperbar;$lowerbar"
-    sleep 1
+    sleep 5
 done

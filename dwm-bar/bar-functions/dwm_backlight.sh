@@ -4,10 +4,9 @@
 # Joe Standring <git@joestandring.com>
 # GNU GPLv3
 
-# Dependencies: xbacklight
 
 dwm_backlight () {
-    printf "%s☀ %.0f%s\n" "$SEP1" "$(brillo)" "$SEP2"
+    printf "%s%.0f%s\n" "| ☀ " "$(brillo)" "$SEP"
 }
 
 dwm_backlight

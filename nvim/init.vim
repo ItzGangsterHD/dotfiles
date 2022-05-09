@@ -1,6 +1,6 @@
 set encoding=utf-8
 set number relativenumber
-syntax enable
+syntax on
 set noswapfile
 set scrolloff=7
 
@@ -21,17 +21,16 @@ Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-colorscheme wal
-let g:airline_theme='wal'
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
 
 if(has("termguicolors"))
     set termguicolors
 endif
-
-lua require 'colorizer'.setup()
 
 " NERDCommenter
 nmap <C-_> <Plug>NERDCommenterToggle
@@ -43,4 +42,4 @@ let g:NERDTreeMinimalUI=1
 nmap <F2> :NERDTreeToggle<CR>
 
 " Python Compile
-nmap <F5> :term python %<CR>
+nmap <F5> :w <bar> :term python %<CR>i

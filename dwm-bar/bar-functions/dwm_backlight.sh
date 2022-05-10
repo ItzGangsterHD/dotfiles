@@ -6,7 +6,7 @@
 
 
 dwm_backlight () {
-    printf "%s%.0f%s\n" "| ☀ " "$(brillo)" "$SEP"
+    printf "%s%.0f%s\n" "☀ " "$(brillo)" "$SEP"
 }
 
 dwm_backlight

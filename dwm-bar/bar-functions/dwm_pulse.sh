@@ -28,7 +28,6 @@ dwm_pulse () {
             printf "VOL %s%%" "$VOL"
         fi
     fi
-    printf "%s" " |"
 }
 
 dwm_pulse

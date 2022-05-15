@@ -15,3 +15,7 @@ XF86AudioRaiseVolume
 
 XF86AudioLowerVolume
 	pamixer -d 5
+
+# change language
+alt + space
+    {setxkbmap mk, setxkbmap us}

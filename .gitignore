@@ -1,0 +1,30 @@
+*
+
+# Config
+!.config/
+.config/*
+
+!.config/ly
+!.config/nvim
+!.config/sxhkd
+!.config/dwm
+!.config/st
+
+# Local
+!.local/
+.local/*
+
+!.local/bin
+.local/bin/*
+
+!.local/bin/set_wallpaper
+!.local/bin/dwm_bar
+
+# Home
+!.gitignore
+!.xinitrc
+!.bashrc
+!.Xdefaults
+!.packages
+!.bash_profile
+!README.md

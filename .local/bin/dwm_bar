@@ -1,0 +1,76 @@
+#!/bin/sh
+
+export SEP=" | "
+
+dwm_backlight () {
+    printf "%s%.0f%s\n" " ☀ " "$(brillo)" "$SEP"
+}
+
+dwm_battery1() {
+    CHARGE=$(cat /sys/class/power_supply/BAT0/capacity)
+    STATUS=$(cat /sys/class/power_supply/BAT0/status)
+
+    if [ "$STATUS" = "Charging" ]; then
+        printf " %s%% %s" "$CHARGE" "$STATUS"
+    else
+        if [ "$CHARGE" -gt 15 ]; then
+            printf " %s%% %s" "$CHARGE" "$STATUS"
+        else
+            printf " %s%% %s" "$CHARGE" "$STATUS"
+        fi
+    fi
+    printf "%s\n" "$SEP"
+}
+
+dwm_battery2() {
+    CHARGE=$(cat /sys/class/power_supply/BAT1/capacity)
+    STATUS=$(cat /sys/class/power_supply/BAT1/status)
+
+    if [ "$STATUS" = "Charging" ]; then
+        printf " %s%% %s" "$CHARGE" "$STATUS"
+    else
+        if [ "$CHARGE" -gt 15 ]; then
+            printf " %s%% %s" "$CHARGE" "$STATUS"
+        else
+            printf " %s%% %s" "$CHARGE" "$STATUS"
+        fi
+    fi
+    printf "%s\n" "$SEP"
+}
+
+dwm_time () {
+    printf "%s%s\n" "$(date "+%T")" "$SEP"
+}
+
+dwm_date () {
+    printf "%s" "$(date "+%d-%m-%y")"
+    printf "%s\n" "$SEP"
+}
+
+dwm_pulse () {
+    VOL=$(pamixer --get-volume)
+    STATE=$(pamixer --get-mute)
+    
+    if [ "$STATE" = "true" ] || [ "$VOL" -eq 0 ]; then
+        printf " "
+    elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 50 ]; then
+        printf " %s%%" "$VOL"
+    else
+        printf " %s%%" "$VOL"
+    fi
+    printf "%s" " "
+}
+
+while true
+do
+    upperbar=""
+    upperbar="$upperbar$(dwm_backlight)"
+    upperbar="$upperbar$(dwm_battery1)"
+    upperbar="$upperbar$(dwm_battery2)"
+    upperbar="$upperbar$(dwm_time)"
+    upperbar="$upperbar$(dwm_date)"
+    upperbar="$upperbar$(dwm_pulse)"
+
+    xsetroot -name "$upperbar"
+    sleep 5
+done

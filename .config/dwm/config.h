@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int snap      = 64;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code:size=15", "Nerd Font:size=15" };
+static const char *fonts[]          = { "Fira Code:size=15" };
 static const char dmenufont[]       = "Fira Code:size=15";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";

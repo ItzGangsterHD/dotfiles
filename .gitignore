@@ -24,6 +24,5 @@
 !.gitignore
 !.xinitrc
 !.bashrc
-!.Xdefaults
 !.packages
 !.bash_profile

@@ -31,3 +31,5 @@ nmap <F2> :NERDTreeToggle<CR>
 
 " Python Compile
 nmap <F5> :w <bar> :term python %<CR>i
+" C++ Compile
+nmap <F6> :w <bar> :term g++ -std=c++11 -O2 -Wall % && ./a.out <CR>i

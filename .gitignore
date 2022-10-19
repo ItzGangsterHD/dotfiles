@@ -5,10 +5,13 @@
 .config/*
 
 !.config/ly
-!.config/nvim
 !.config/sxhkd
 !.config/dwm
 !.config/st
+!.config/nvim
+!.config/nvim/templates
+.config/nvim/templates/*
+!.config/nvim/templates/*
 
 # Local
 !.local/

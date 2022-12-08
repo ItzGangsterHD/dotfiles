@@ -2,6 +2,6 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+_JAVA_AWT_WM_NONREPARENTING=1
 
-startx
+[[ -f ~/.bashrc ]] && . ~/.bashrc

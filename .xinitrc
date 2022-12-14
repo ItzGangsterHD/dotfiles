@@ -7,4 +7,4 @@ xcompmgr &
 wal -a 92 -R &
 sxhkd &
 
-exec dbus-launch --exit-with-session dwm
+exec dwm

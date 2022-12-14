@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $(awk 'NR==26' /etc/auto-cpufreq.conf | cut -c 10-21) == "powersave" ]
+then
+    sudo sed -i '26s/.*/governor: performance/' /etc/auto-cpufreq.conf
+else
+    sudo sed -i '26s/.*/governor: powersave/' /etc/auto-cpufreq.conf
+fi
+
+sudo systemctl restart auto-cpufreq

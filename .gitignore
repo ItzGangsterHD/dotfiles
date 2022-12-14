@@ -20,6 +20,7 @@
 !.local/bin
 .local/bin/*
 
+!.local/bin/switch_governor
 !.local/bin/set_wallpaper
 !.local/bin/dwm_bar
 
